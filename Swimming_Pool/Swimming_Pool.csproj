@@ -11,6 +11,22 @@
     <AssemblyName>Swimming_Pool</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Microsoft\Desktop\حمام السباحة\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,9 +47,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4ED542AB1616D0D8C845CACA18700EF12E40FD7F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Swimming_Pool_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,14 +81,167 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\Attendance.cs" />
+    <Compile Include="BL\Distribution.cs" />
+    <Compile Include="BL\LogIn.cs" />
+    <Compile Include="BL\money.cs" />
+    <Compile Include="BL\Other.cs" />
+    <Compile Include="BL\Registration_Form.cs" />
+    <Compile Include="BL\Schools.cs" />
+    <Compile Include="BL\Subscribtion_Form.cs" />
+    <Compile Include="DAL\DataAccessLayer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\BackUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\BackUP.Designer.cs">
+      <DependentUpon>BackUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Collection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Collection.Designer.cs">
+      <DependentUpon>Collection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Distribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Distribution.Designer.cs">
+      <DependentUpon>Distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\money.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\money.Designer.cs">
+      <DependentUpon>money.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Other.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Other.Designer.cs">
+      <DependentUpon>Other.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Registration_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Registration_Form.Designer.cs">
+      <DependentUpon>Registration_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Remain_money.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Remain_money.Designer.cs">
+      <DependentUpon>Remain_money.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Schools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Schools.Designer.cs">
+      <DependentUpon>Schools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Subscribtion_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Subscribtion_Form.Designer.cs">
+      <DependentUpon>Subscribtion_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPT\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RPT\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RPT\Getstdbyclass.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Getstdbyclass.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPT\Getstdbyclassfromsubscribtion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Getstdbyclassfromsubscribtion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="PL\BackUP.resx">
+      <DependentUpon>BackUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Collection.resx">
+      <DependentUpon>Collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Distribution.resx">
+      <DependentUpon>Distribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\money.resx">
+      <DependentUpon>money.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Other.resx">
+      <DependentUpon>Other.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Registration_Form.resx">
+      <DependentUpon>Registration_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Remain_money.resx">
+      <DependentUpon>Remain_money.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Schools.resx">
+      <DependentUpon>Schools.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Subscribtion_Form.resx">
+      <DependentUpon>Subscribtion_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -61,9 +250,21 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RPT\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Getstdbyclass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Getstdbyclass.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RPT\Getstdbyclassfromsubscribtion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Getstdbyclassfromsubscribtion.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -71,9 +272,72 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Swimming_Pool_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Backup-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Users-Change-User-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1.ico" />
+    <None Include="Resources\WhatsApp Image 2020-01-14 at 8.11.40 PM%281%29.jpeg" />
+    <None Include="Resources\WhatsApp Image 2020-01-13 at 12.43.46 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
